@@ -12,6 +12,13 @@ BrowserWindow.prototype._init = function (this: BWT) {
   // Avoid recursive require.
   const { app } = require('electron');
 
+  // Set id so it's available after window destruction.
+  const id = this.id;
+  Object.defineProperty(this, 'id', {
+    value: id,
+    writable: false
+  });
+
   const nativeSetBounds = this.setBounds;
   this.setBounds = (bounds, ...opts) => {
     bounds = {
