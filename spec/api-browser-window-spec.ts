@@ -1088,6 +1088,14 @@ describe('BrowserWindow module', () => {
       });
     });
 
+    describe('BrowserWindow.minimize()', () => {
+      it('should not be visible when the window is minimized', () => {
+        w.minimize();
+        expect(w.isMinimized()).to.equal(true);
+        expect(w.isVisible()).to.equal(false);
+      });
+    });
+
     describe('BrowserWindow.showInactive()', () => {
       it('should not focus on window', () => {
         w.showInactive();

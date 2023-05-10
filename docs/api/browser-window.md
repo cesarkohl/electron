@@ -669,6 +669,8 @@ Hides the window.
 
 Returns `boolean` - Whether the window is visible to the user.
 
+For a window to be visible, it must be visible to the user in the foreground of the app, which means that it should not be minimized or occluded.
+
 #### `win.isModal()`
 
 Returns `boolean` - Whether current window is a modal window.
